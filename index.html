@@ -4,24 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Massoterapeuta Manuella</title>
+  <meta name="description" content="Massagem humanizada com foco em equilíbrio entre corpo, mente e espírito. Relaxante, terapêutica, drenagem linfática e pós-operatório.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #f6f2eb;
-      --bg-soft: #efe7dc;
-      --sand: #d8c1a0;
-      --gold: #b9965b;
-      --gold-dark: #8d6a36;
-      --text: #4d4034;
-      --text-soft: #6d5a49;
-      --white: #ffffff;
-      --shadow: 0 18px 45px rgba(86, 62, 34, 0.12);
-      --radius: 26px;
-      --container: 1180px;
+      --bg:#f8f4ee;
+      --bg-soft:#f2ebe1;
+      --card:#fffdfa;
+      --text:#4a3a2d;
+      --text-soft:#756353;
+      --gold:#b8915d;
+      --gold-dark:#8f6b3c;
+      --line:rgba(143,107,60,0.14);
+      --shadow:0 20px 50px rgba(94,72,44,0.10);
+      --radius:28px;
+      --container:1180px;
     }
 
     *{
@@ -35,20 +36,21 @@
     }
 
     body{
-      font-family:'Inter', sans-serif;
-      background:var(--bg);
+      font-family:'Manrope', sans-serif;
+      background:linear-gradient(to bottom, #fbf8f3, #f6f0e7);
       color:var(--text);
-      line-height:1.6;
+      line-height:1.65;
     }
 
     img{
-      max-width:100%;
       display:block;
+      width:100%;
+      max-width:100%;
     }
 
     a{
-      text-decoration:none;
       color:inherit;
+      text-decoration:none;
     }
 
     .container{
@@ -57,39 +59,79 @@
     }
 
     .section{
-      padding:90px 0;
+      padding:96px 0;
     }
 
     .eyebrow{
       display:inline-block;
+      margin-bottom:16px;
       font-size:12px;
-      letter-spacing:0.22em;
+      letter-spacing:.24em;
       text-transform:uppercase;
       color:var(--gold-dark);
-      margin-bottom:18px;
-      font-weight:600;
+      font-weight:700;
     }
 
     h1,h2,h3{
       font-family:'Cormorant Garamond', serif;
+      line-height:1.03;
       font-weight:600;
-      line-height:1.05;
-      color:#3f3126;
+      color:#3b2e24;
     }
 
     h1{
-      font-size:clamp(3rem, 7vw, 6rem);
-      letter-spacing:0.02em;
+      font-size:clamp(3rem, 7vw, 6.2rem);
     }
 
     h2{
-      font-size:clamp(2.2rem, 4vw, 3.8rem);
-      margin-bottom:22px;
+      font-size:clamp(2.3rem, 4.8vw, 4rem);
+      margin-bottom:18px;
+    }
+
+    h3{
+      font-size:2rem;
+      margin-bottom:10px;
     }
 
     p{
       color:var(--text-soft);
-      font-size:1.03rem;
+      font-size:1rem;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:90;
+      background:rgba(248,244,238,.78);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      font-family:'Cormorant Garamond', serif;
+      font-size:1.9rem;
+      letter-spacing:.02em;
+      color:#433327;
+    }
+
+    .menu{
+      display:flex;
+      gap:26px;
+      flex-wrap:wrap;
+      color:var(--text-soft);
+      font-size:.96rem;
+    }
+
+    .menu a:hover{
+      color:var(--gold-dark);
     }
 
     .btn{
@@ -99,104 +141,68 @@
       gap:10px;
       padding:16px 28px;
       border-radius:999px;
-      transition:0.3s ease;
-      font-weight:600;
+      font-weight:700;
+      transition:.28s ease;
       border:1px solid transparent;
     }
 
     .btn-primary{
-      background:linear-gradient(135deg, var(--gold), var(--sand));
-      color:#fff;
+      color:white;
+      background:linear-gradient(135deg, var(--gold-dark), var(--gold));
       box-shadow:var(--shadow);
     }
 
     .btn-primary:hover{
       transform:translateY(-2px);
-      filter:brightness(1.02);
+      filter:brightness(1.03);
     }
 
-    .btn-secondary{
-      border:1px solid rgba(141,106,54,0.28);
-      color:var(--gold-dark);
-      background:rgba(255,255,255,0.55);
-      backdrop-filter: blur(8px);
+    .btn-outline{
+      border:1px solid rgba(255,255,255,.35);
+      color:white;
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(8px);
     }
 
-    .btn-secondary:hover{
-      background:#fff;
-    }
-
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter:blur(14px);
-      background:rgba(246,242,235,0.76);
-      border-bottom:1px solid rgba(141,106,54,0.08);
-    }
-
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      min-height:76px;
-      gap:20px;
-    }
-
-    .brand{
-      font-family:'Cormorant Garamond', serif;
-      font-size:1.7rem;
-      letter-spacing:0.03em;
-      color:#473629;
-    }
-
-    .menu{
-      display:flex;
-      gap:24px;
-      flex-wrap:wrap;
-      font-size:0.95rem;
-      color:var(--text-soft);
-    }
-
-    .menu a:hover{
-      color:var(--gold-dark);
+    .btn-outline:hover{
+      background:rgba(255,255,255,.14);
     }
 
     .hero{
       position:relative;
-      min-height:92vh;
+      min-height:95vh;
       display:flex;
       align-items:center;
       overflow:hidden;
       background:
-        linear-gradient(90deg, rgba(44,31,21,0.62) 0%, rgba(44,31,21,0.34) 38%, rgba(44,31,21,0.16) 100%),
-        url('manuella-retrato.jpg') center/cover no-repeat;
+        linear-gradient(90deg, rgba(43,29,18,.72) 0%, rgba(43,29,18,.48) 36%, rgba(43,29,18,.12) 100%),
+        url('hero-manuella.jpg') center center / cover no-repeat;
     }
 
     .hero::after{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(to top, rgba(246,242,235,0.25), rgba(246,242,235,0));
+      background:linear-gradient(to top, rgba(248,244,238,.06), rgba(248,244,238,0));
     }
 
     .hero-content{
       position:relative;
       z-index:2;
       max-width:720px;
-      color:#fff;
-      padding:90px 0;
+      color:white;
+      padding:100px 0 80px;
     }
 
     .hero .eyebrow{
-      color:#f3e5cf;
+      color:#f2dfc3;
     }
 
     .hero p{
-      color:rgba(255,255,255,0.88);
-      font-size:1.08rem;
+      color:rgba(255,255,255,.9);
       max-width:560px;
       margin:22px 0 34px;
+      font-size:1.05rem;
     }
 
     .hero-actions{
@@ -205,143 +211,135 @@
       flex-wrap:wrap;
     }
 
-    .hero-card{
+    .hero-badge{
       margin-top:34px;
-      max-width:420px;
-      background:rgba(255,255,255,0.14);
-      border:1px solid rgba(255,255,255,0.16);
-      backdrop-filter:blur(12px);
-      border-radius:24px;
-      padding:18px 20px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:14px 18px;
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
       color:#fff;
-      font-size:0.96rem;
+      font-size:.93rem;
+      backdrop-filter:blur(10px);
     }
 
     .split{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:54px;
+      gap:56px;
       align-items:center;
     }
 
-    .image-card{
-      border-radius:32px;
+    .photo-frame{
+      border-radius:34px;
       overflow:hidden;
       box-shadow:var(--shadow);
       background:#ddd;
     }
 
-    .image-card img{
-      width:100%;
+    .photo-frame img{
       height:100%;
       object-fit:cover;
     }
 
-    .quote-box{
+    .quote{
       margin-top:28px;
-      background:rgba(216,193,160,0.18);
-      border:1px solid rgba(185,150,91,0.18);
-      padding:24px;
-      border-radius:22px;
-      color:var(--text);
+      padding:24px 26px;
+      border-radius:24px;
+      background:linear-gradient(180deg, rgba(184,145,93,.10), rgba(184,145,93,.05));
+      border:1px solid rgba(184,145,93,.16);
       font-family:'Cormorant Garamond', serif;
-      font-size:1.6rem;
-      line-height:1.2;
+      font-size:1.7rem;
+      color:#47362a;
+      line-height:1.18;
     }
 
-    .cards{
+    .grid-3{
       display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:24px;
+      grid-template-columns:repeat(3, 1fr);
+      gap:22px;
       margin-top:34px;
     }
 
-    .card{
-      background:rgba(255,255,255,0.75);
-      border:1px solid rgba(141,106,54,0.08);
+    .info-card{
+      background:rgba(255,253,250,.86);
+      border:1px solid var(--line);
       border-radius:26px;
       padding:28px;
       box-shadow:var(--shadow);
     }
 
-    .card h3{
-      font-size:2rem;
-      margin-bottom:12px;
+    .info-card p{
+      font-size:.98rem;
     }
 
-    .card p{
-      font-size:0.98rem;
-    }
-
-    .services-grid{
+    .services-wrap{
       display:grid;
-      grid-template-columns:1.1fr 0.9fr;
-      gap:30px;
+      grid-template-columns:1.05fr .95fr;
+      gap:28px;
       align-items:stretch;
+      margin-top:30px;
     }
 
-    .service-list{
+    .services-list{
       display:grid;
       gap:18px;
     }
 
-    .service-item{
+    .service{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:26px;
       padding:26px;
-      background:#fff;
-      border-radius:24px;
       box-shadow:var(--shadow);
-      border:1px solid rgba(141,106,54,0.08);
     }
 
-    .service-item h3{
-      font-size:1.9rem;
-      margin-bottom:10px;
-    }
-
-    .service-item small{
-      display:block;
-      color:var(--gold-dark);
-      font-size:0.9rem;
+    .service small{
+      display:inline-block;
       margin-top:10px;
-      font-weight:600;
-      letter-spacing:0.03em;
+      color:var(--gold-dark);
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      font-size:.75rem;
     }
 
     .service-photo{
-      min-height:100%;
-      border-radius:32px;
+      border-radius:34px;
       overflow:hidden;
       box-shadow:var(--shadow);
+      min-height:100%;
     }
 
     .service-photo img{
-      width:100%;
       height:100%;
       object-fit:cover;
     }
 
-    .ambient{
-      background:linear-gradient(180deg, rgba(239,231,220,0.56), rgba(246,242,235,0.9));
+    .experience{
+      background:linear-gradient(180deg, rgba(242,235,225,.55), rgba(248,244,238,0));
     }
 
-    .ambient-grid{
+    .experience-grid{
       display:grid;
-      grid-template-columns:0.95fr 1.05fr;
+      grid-template-columns:.95fr 1.05fr;
       gap:38px;
       align-items:center;
     }
 
-    .ambient-panel{
-      background:rgba(255,255,255,0.74);
+    .panel{
+      background:rgba(255,253,249,.82);
+      border:1px solid var(--line);
+      border-radius:30px;
       padding:34px;
-      border-radius:28px;
       box-shadow:var(--shadow);
-      border:1px solid rgba(141,106,54,0.08);
     }
 
     .bullets{
       list-style:none;
-      margin-top:20px;
+      margin-top:18px;
       display:grid;
       gap:12px;
     }
@@ -360,19 +358,14 @@
     }
 
     .booking{
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.82), rgba(255,255,255,0.64));
-      border:1px solid rgba(141,106,54,0.08);
-      border-radius:32px;
-      padding:36px;
+      background:linear-gradient(135deg, rgba(255,255,255,.80), rgba(255,251,246,.65));
+      border:1px solid var(--line);
+      border-radius:34px;
       box-shadow:var(--shadow);
+      padding:38px;
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:26px;
-    }
-
-    .booking-info{
-      padding-right:10px;
+      gap:28px;
     }
 
     form{
@@ -382,118 +375,104 @@
 
     input, textarea, select{
       width:100%;
-      border:none;
-      background:#fff;
-      border-radius:18px;
       padding:16px 18px;
+      border-radius:18px;
+      border:1px solid rgba(143,107,60,.12);
+      background:#fff;
       font:inherit;
       color:var(--text);
       outline:none;
-      border:1px solid rgba(141,106,54,0.1);
     }
 
     textarea{
-      min-height:130px;
       resize:vertical;
+      min-height:130px;
     }
 
     .mini{
-      font-size:0.92rem;
-      color:var(--text-soft);
-      margin-top:14px;
+      margin-top:12px;
+      font-size:.93rem;
     }
 
     footer{
-      padding:36px 0 50px;
-      border-top:1px solid rgba(141,106,54,0.08);
-      background:#f3eee6;
+      border-top:1px solid var(--line);
+      background:#f4ede3;
+      padding:36px 0 48px;
     }
 
     .footer-wrap{
       display:flex;
       justify-content:space-between;
+      gap:18px;
       align-items:center;
-      gap:16px;
       flex-wrap:wrap;
     }
 
     .footer-brand{
       font-family:'Cormorant Garamond', serif;
-      font-size:1.8rem;
-      color:#463529;
+      font-size:1.9rem;
+      color:#433327;
     }
 
-    .whatsapp-float{
+    .float-wa{
       position:fixed;
       right:20px;
       bottom:20px;
-      z-index:80;
-      background:#25D366;
-      color:#fff;
+      z-index:100;
       width:64px;
       height:64px;
       border-radius:50%;
+      background:#25D366;
+      color:#fff;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:1.7rem;
-      box-shadow:0 16px 28px rgba(0,0,0,0.18);
+      font-size:1.8rem;
+      box-shadow:0 16px 30px rgba(0,0,0,.18);
     }
 
     @media (max-width: 980px){
-      .split,
-      .services-grid,
-      .ambient-grid,
-      .booking{
-        grid-template-columns:1fr;
-      }
-
-      .cards{
-        grid-template-columns:1fr;
-      }
-
       .menu{
         display:none;
       }
 
+      .split,
+      .services-wrap,
+      .experience-grid,
+      .booking,
+      .grid-3{
+        grid-template-columns:1fr;
+      }
+
       .hero{
         min-height:auto;
-        padding-top:20px;
       }
 
       .hero-content{
-        padding:80px 0;
+        padding:86px 0 72px;
       }
     }
 
     @media (max-width: 640px){
       .section{
-        padding:72px 0;
-      }
-
-      .hero{
-        background-position:center top;
+        padding:74px 0;
       }
 
       .btn{
         width:100%;
       }
 
-      h1{
-        font-size:3.1rem;
-      }
-
-      h2{
-        font-size:2.4rem;
+      .hero{
+        background-position:center top;
       }
 
       .booking{
-        padding:22px;
+        padding:24px;
       }
 
-      .card,
-      .service-item,
-      .ambient-panel{
+      .panel,
+      .info-card,
+      .service{
         padding:22px;
       }
     }
@@ -501,41 +480,40 @@
 </head>
 <body>
 
-  <div class="topbar">
+  <header class="topbar">
     <div class="container nav">
       <a href="#" class="brand">Massoterapeuta Manuella</a>
 
       <nav class="menu">
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
-        <a href="#ambiente">Ambiente</a>
+        <a href="#experiencia">Experiência</a>
         <a href="#agendamento">Agendamento</a>
       </nav>
     </div>
-  </div>
+  </header>
 
   <section class="hero">
     <div class="container">
       <div class="hero-content">
         <span class="eyebrow">corpo • mente • espírito</span>
-        <h1>Toque humanizado para restaurar presença, bem-estar e equilíbrio.</h1>
+        <h1>Massagem humanizada com presença, delicadeza e propósito.</h1>
         <p>
-          Um atendimento acolhedor, feminino e profundo, pensado para aliviar tensões,
-          cuidar do corpo com respeito e transformar a massagem em um momento real de reconexão.
+          Um cuidado profissional que acolhe o corpo, desacelera a mente e transforma
+          o toque em uma experiência de bem-estar, reconexão e alívio real.
         </p>
 
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://wa.me/5551993798396?text=Olá%2C%20quero%20agendar%20um%20horário%20com%20a%20Massoterapeuta%20Manuella." target="_blank">
             Agendar pelo WhatsApp
           </a>
-          <a class="btn btn-secondary" href="#servicos">
-            Conhecer serviços
+          <a class="btn btn-outline" href="#servicos">
+            Ver serviços
           </a>
         </div>
 
-        <div class="hero-card">
-          Atendimento humanizado para homens, mulheres e idosos, com foco em cuidado,
-          presença e resultados terapêuticos.
+        <div class="hero-badge">
+          Atendimento para homens, mulheres e idosos
         </div>
       </div>
     </div>
@@ -543,21 +521,21 @@
 
   <section class="section" id="sobre">
     <div class="container split">
-      <div class="image-card">
-        <img src="manuella-proposito.jpg" alt="Imagem autoral representando o propósito da Massoterapeuta Manuella">
+      <div class="photo-frame">
+        <img src="sobre-manuella.jpg" alt="Retrato profissional da Massoterapeuta Manuella">
       </div>
 
       <div>
-        <span class="eyebrow">sobre meu propósito</span>
-        <h2>Escolhi a massagem como caminho e transformei em propósito.</h2>
+        <span class="eyebrow">sobre mim</span>
+        <h2>Escolhi a massagem como caminho e transformei esse cuidado em propósito.</h2>
         <p>
-          Meu trabalho nasce da união entre técnica, presença e sensibilidade.
-          Acredito que o toque certo pode aliviar dores, desacelerar a mente
-          e devolver ao corpo a sensação de segurança, descanso e vitalidade.
+          Meu atendimento nasce da união entre técnica, sensibilidade e escuta.
+          Acredito que cuidar do corpo é também respeitar emoções, aliviar tensões
+          e devolver à pessoa a sensação de presença, descanso e valor pessoal.
         </p>
 
-        <div class="quote-box">
-          “Unindo corpo, mente e espírito em um atendimento que acolhe, alivia e reconecta.”
+        <div class="quote">
+          “Cada atendimento é um encontro entre acolhimento, técnica e reconexão.”
         </div>
       </div>
     </div>
@@ -565,38 +543,31 @@
 
   <section class="section">
     <div class="container">
-      <span class="eyebrow">a experiência</span>
-      <h2>Um cuidado que vai além da estética.</h2>
+      <span class="eyebrow">o que torna essa experiência especial</span>
+      <h2>Um atendimento profissional, autoral e profundamente humano.</h2>
 
-      <div class="cards">
-        <div class="card">
+      <div class="grid-3">
+        <div class="info-card">
           <h3>Humanizado</h3>
           <p>
-            Cada atendimento é único. Escuto seu momento, sua necessidade e o que seu corpo
-            está comunicando antes de qualquer técnica.
+            Cada corpo carrega necessidades diferentes. O atendimento respeita o seu momento
+            e busca oferecer o cuidado certo para aquilo que você realmente precisa.
           </p>
         </div>
 
-        <div class="card">
+        <div class="info-card">
           <h3>Terapêutico</h3>
           <p>
-            A massagem pode contribuir para aliviar dores, reduzir tensões, melhorar a circulação
-            e trazer mais leveza para o seu dia.
+            A massagem contribui para aliviar tensões musculares, desconfortos, estresse,
+            retenção de líquidos e sobrecargas físicas e emocionais.
           </p>
         </div>
 
-        <div class="card">
+        <div class="info-card">
           <h3>Autocuidado</h3>
           <p>
-            Cuidar de si não é luxo. É base para viver com mais presença, autoestima,
-            clareza e equilíbrio emocional.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Presença</h3>
-          <p>
-            Meu espaço foi pensado para você desacelerar, respirar melhor e se permitir receber cuidado.
+            Cuidar de si não é excesso. É base para viver com mais leveza, presença,
+            autoestima e qualidade de vida.
           </p>
         </div>
       </div>
@@ -606,61 +577,79 @@
   <section class="section" id="servicos">
     <div class="container">
       <span class="eyebrow">serviços</span>
-      <h2>Massagens com toque profissional e acolhedor.</h2>
+      <h2>Massagens pensadas para aliviar, restaurar e trazer leveza ao seu dia.</h2>
 
-      <div class="services-grid">
-        <div class="service-list">
-          <div class="service-item">
-            <h3>Relaxante</h3>
-            <p>Ideal para desacelerar, reduzir o estresse e proporcionar sensação de leveza física e mental.</p>
-            <small>Bem-estar profundo</small>
+      <div class="services-wrap">
+        <div class="services-list">
+          <div class="service">
+            <h3>Massagem Relaxante</h3>
+            <p>Para desacelerar, soltar tensões do dia a dia e promover sensação de paz física e mental.</p>
+            <small>leveza e descanso</small>
           </div>
 
-          <div class="service-item">
-            <h3>Terapêutica</h3>
-            <p>Voltada ao alívio de tensões, desconfortos musculares e sobrecargas do dia a dia.</p>
-            <small>Alívio e recuperação</small>
+          <div class="service">
+            <h3>Massagem Terapêutica</h3>
+            <p>Focada em aliviar pontos de tensão, desconfortos musculares e sobrecargas acumuladas.</p>
+            <small>alívio e recuperação</small>
           </div>
 
-          <div class="service-item">
+          <div class="service">
             <h3>Drenagem Linfática</h3>
-            <p>Estimula a circulação linfática, ajuda na retenção de líquidos e promove sensação de leveza corporal.</p>
-            <small>Leveza e cuidado</small>
+            <p>Um cuidado que auxilia na retenção de líquidos, circulação e sensação de bem-estar corporal.</p>
+            <small>leveza e circulação</small>
           </div>
 
-          <div class="service-item">
+          <div class="service">
             <h3>Pós-operatório</h3>
-            <p>Atendimento cuidadoso, respeitoso e atento ao seu processo de recuperação.</p>
-            <small>Cuidado com segurança</small>
+            <p>Atendimento cuidadoso, respeitoso e atento ao processo de recuperação, com olhar humanizado.</p>
+            <small>cuidado com atenção</small>
           </div>
         </div>
 
         <div class="service-photo">
-          <img src="manuella-atendimento.jpg" alt="Massagem realizada pela Massoterapeuta Manuella">
+          <img src="atendimento-manuella.jpg" alt="Massagem terapêutica realizada por Manuella">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section ambient" id="ambiente">
-    <div class="container ambient-grid">
-      <div class="image-card">
-        <img src="manuella-ambiente.jpg" alt="Ambiente de atendimento da Massoterapeuta Manuella">
+  <section class="section experience" id="experiencia">
+    <div class="container experience-grid">
+      <div class="photo-frame">
+        <img src="praia-manuella.jpg" alt="Experiência de massagem na praia com a Massoterapeuta Manuella">
       </div>
 
-      <div class="ambient-panel">
-        <span class="eyebrow">seu momento de pausa</span>
-        <h2>Um ambiente clean, delicado e acolhedor.</h2>
+      <div class="panel">
+        <span class="eyebrow">experiência exclusiva</span>
+        <h2>Bem-estar que também pode encontrar a natureza.</h2>
         <p>
-          Cores suaves, luz equilibrada e uma atmosfera pensada para que você se sinta confortável
-          desde o primeiro instante.
+          Mais do que uma sessão, meu trabalho busca criar uma experiência memorável:
+          um momento em que o corpo recebe cuidado, a mente desacelera e a pessoa
+          sente que pode simplesmente respirar.
         </p>
 
         <ul class="bullets">
-          <li>Atendimento com presença, respeito e escuta.</li>
-          <li>Espaço preparado para descanso, bem-estar e reconexão.</li>
-          <li>Experiência visual clean com toque sofisticado e feminino.</li>
+          <li>Atendimento com presença, delicadeza e profissionalismo.</li>
+          <li>Visual clean, feminino e acolhedor.</li>
+          <li>Uma proposta autoral que une técnica, estética e sensibilidade.</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">detalhes que acolhem</span>
+        <h2>Cada elemento do atendimento é pensado para transmitir cuidado.</h2>
+        <p>
+          Toalhas, aromas, organização, ambiente e apresentação fazem parte da experiência.
+          O profissionalismo também aparece nos detalhes que fazem você se sentir bem recebida(o).
+        </p>
+      </div>
+
+      <div class="photo-frame">
+        <img src="detalhe-manuella.jpg" alt="Detalhes do ambiente e preparação do atendimento">
       </div>
     </div>
   </section>
@@ -668,11 +657,11 @@
   <section class="section" id="agendamento">
     <div class="container">
       <div class="booking">
-        <div class="booking-info">
+        <div>
           <span class="eyebrow">agendamento</span>
           <h2>Reserve seu horário com praticidade.</h2>
           <p>
-            Preencha as informações e você será direcionado para o WhatsApp com a mensagem pronta.
+            Preencha os dados abaixo e você será direcionado para o WhatsApp com a mensagem pronta.
           </p>
           <p class="mini">
             Atendimento para homens, mulheres e idosos.
@@ -691,7 +680,7 @@
             <option>Pós-operatório</option>
           </select>
 
-          <textarea id="mensagem" placeholder="Conte brevemente o que você procura ou o melhor horário para você"></textarea>
+          <textarea id="mensagem" placeholder="Escreva seu objetivo, necessidade ou melhor horário"></textarea>
 
           <button class="btn btn-primary" type="submit">Ir para o WhatsApp</button>
         </form>
@@ -706,13 +695,13 @@
         <p>Equilíbrio entre corpo, mente e espírito.</p>
       </div>
 
-      <a class="btn btn-secondary" href="https://wa.me/5551993798396" target="_blank">
+      <a class="btn btn-primary" href="https://wa.me/5551993798396" target="_blank">
         Falar no WhatsApp
       </a>
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/5551993798396" target="_blank" aria-label="WhatsApp">
+  <a class="float-wa" href="https://wa.me/5551993798396" target="_blank" aria-label="WhatsApp">
     ✆
   </a>
 
