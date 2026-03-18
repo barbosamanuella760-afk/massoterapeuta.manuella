@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Massoterapeuta Manuella</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f6f2;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(to right, #d4af37, #f5deb3);
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    color: #b8962e;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.service {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.booking {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 15px;
+    background: #d4af37;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #777;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>Massoterapeuta Manuella</h1>
+    <p>Equilíbrio entre corpo, mente e espírito</p>
+</header>
+
+<section>
+    <h2>Sobre o atendimento</h2>
+    <p>
+        A massagem vai além do físico. É um cuidado profundo que conecta corpo, mente e espírito,
+        trazendo alívio, equilíbrio e bem-estar.
+    </p>
+</section>
+
+<section>
+    <h2>Serviços</h2>
+    <div class="services">
+        <div class="service">Massagem Relaxante</div>
+        <div class="service">Massagem Terapêutica</div>
+        <div class="service">Drenagem Linfática</div>
+        <div class="service">Pós-operatório</div>
+    </div>
+    <p>Atendimento para homens, mulheres e idosos.</p>
+</section>
+
+<section>
+    <h2>Agendamento</h2>
+    <div class="booking">
+        <input type="text" placeholder="Seu nome">
+        <input type="tel" placeholder="Seu telefone">
+        <textarea placeholder="Mensagem ou horário desejado"></textarea>
+        <button onclick="enviarWhats()">Agendar pelo WhatsApp</button>
+    </div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/5551993798396" target="_blank">
+    WhatsApp
+</a>
+
+<footer>
+    © 2026 Massoterapeuta Manuella - Todos os direitos reservados
+</footer>
+
+<script>
+function enviarWhats() {
+    let nome = document.querySelector("input[type=text]").value;
+    let telefone = document.querySelector("input[type=tel]").value;
+    let mensagem = document.querySelector("textarea").value;
+
+    let texto = `Olá, meu nome é ${nome}. Meu telefone é ${telefone}. Gostaria de agendar: ${mensagem}`;
+    let url = "https://wa.me/5551993798396?text=" + encodeURIComponent(texto);
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
